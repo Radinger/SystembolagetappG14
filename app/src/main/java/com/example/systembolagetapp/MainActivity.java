@@ -165,5 +165,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, " arguments: " + argumentString);
 
         // search for products later on :)
+        // Add one for now
+        Product p = new Product.Builder()
+                .alcohol(4.4)
+                .name("Budvar")
+                .nr(1234)
+                .productGroup("Öl")
+                .type("Öl")
+                .volume(330).build();
+        products.add(p);
+        adapter.notifyDataSetChanged();
     }
 }

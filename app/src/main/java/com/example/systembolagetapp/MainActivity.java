@@ -1,6 +1,7 @@
 package com.example.systembolagetapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -83,8 +85,13 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent,
                                     final View view,
                                     int position /*The position of the view in the adapter.*/,
-                                    long id /* The row id of the item that was clicked */) {
+                                    long id /* The row id of the item that was clicked. */) {
                 Log.d(LOG_TAG, "item clicked, pos:" + position + " id: " + id);
+                Product p = products.get(position);
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                /* This tells the app to use ProductActivity when clicking on an object. I think? */
+                intent.putExtra("product", p);
+                startActivity(intent); /* starts the activity based on the intent. */
             }
         });
     }

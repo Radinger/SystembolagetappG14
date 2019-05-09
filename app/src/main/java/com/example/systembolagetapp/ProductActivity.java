@@ -7,7 +7,9 @@ import android.util.Log;
 import android.widget.TextView;
 import com.example.systembolagetapp.domain.Product;
 
-public class ProductActivity extends AppCompatActivity {
+import java.io.Serializable;
+
+public class ProductActivity extends AppCompatActivity implements Serializable {
 
     private static final String LOG_TAG = ProductActivity.class.getSimpleName();
 

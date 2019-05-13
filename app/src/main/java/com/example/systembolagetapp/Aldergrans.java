@@ -21,7 +21,7 @@ public class Aldergrans extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Aldergrans.this, MainActivity.class);
-                startActivity(intent);
+                startActivity(intent); finish();
             }
         });
         Button btnexit = (Button) findViewById(R.id.Nbutton);
@@ -33,5 +33,4 @@ public class Aldergrans extends AppCompatActivity implements Serializable {
             }
         });
     }
-
 }

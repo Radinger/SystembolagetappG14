@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/android_bg"
     tools:context=".Searchactivity">
 
     <Button
         android:id="@+id/search_button"
         android:layout_width="270dp"
         android:layout_height="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="586dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/searchbutton"
         android:shadowColor="#000000"
         android:shadowDx="0"
@@ -19,8 +22,10 @@
         android:text="Sök"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="586dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

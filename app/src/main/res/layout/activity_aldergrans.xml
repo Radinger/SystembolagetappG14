@@ -4,40 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Aldergrans"
-    android:background="@drawable/android_bg">
+    android:background="@drawable/android_bg"
+    tools:context=".Aldergrans">
+
 
     <Button
         android:id="@+id/Ybutton"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="418dp"
-        android:layout_marginEnd="256dp"
-        android:layout_marginBottom="265dp"
-        android:backgroundTint="#4CAF50"
-        android:text="Ja"
-        android:visibility="visible"
+
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="80dp"
+
+        android:layout_marginTop="424dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="247dp"
+        android:background="@drawable/button"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:text="Jag är 20 eller över"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    />/ android:id="@+id/Ybutton"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_marginStart="67dp"
+    android:layout_marginTop="418dp"
+    android:layout_marginEnd="256dp"
+    android:layout_marginBottom="265dp"
+    android:backgroundTint="#4CAF50"
+    android:text="Ja"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
     <Button
         android:id="@+id/Nbutton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="261dp"
-        android:layout_marginTop="418dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="265dp"
-        android:backgroundTint="#F80202"
-        android:text="Nej"
-        android:visibility="visible"
+
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="523dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/button"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+
+        android:shadowRadius="0"
+        android:text="Jag är under 20"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />/ android:id="@+id/Nbutton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="261dp"
+    android:layout_marginTop="418dp"
+    android:layout_marginEnd="62dp"
+    android:layout_marginBottom="265dp"
+    android:backgroundTint="#F80202"
+    android:text="Nej"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Aldergranstext"
@@ -62,5 +106,23 @@
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/agedisclaimer"
+        android:layout_width="260dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="326dp"
+        android:clickable="false"
+        android:text="Denna app innehåller information om alkoholdrycker. För användning måste du vara 20 år eller äldre."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

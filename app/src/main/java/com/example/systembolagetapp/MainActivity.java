@@ -35,7 +35,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class MainActivity extends AppCompatActivity implements Serializable {
+public class    MainActivity extends AppCompatActivity implements Serializable {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private List<Product> products;

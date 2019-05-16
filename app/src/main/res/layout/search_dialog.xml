@@ -51,18 +51,6 @@
             android:layout_marginBottom="4dp"
             android:hint="Maximum price, e g 19" />
 
-        <EditText
-            android:id="@+id/type_input"
-            android:inputType="text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp"
-            android:hint="Type, e g Vitt vin"
-             />
-
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

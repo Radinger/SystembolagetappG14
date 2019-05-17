@@ -8,6 +8,7 @@
     tools:context=".Searchactivity">
 
     <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="215dp"
@@ -25,30 +26,50 @@
             android:layout_marginTop="150dp"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button One" />
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/oel1"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button Two" />
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/sprit"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button Three" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/vin1"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button Four" />
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/vin2"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button Five" />
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/skumpa"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -92,14 +113,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="156dp"
-        android:layout_height="227dp"
-        android:backgroundTint="#003F2C2C"
-        app:srcCompat="@drawable/oel2"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="2dp" />
+
 
 
 </android.support.constraint.ConstraintLayout>

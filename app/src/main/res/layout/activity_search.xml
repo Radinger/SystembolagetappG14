@@ -11,15 +11,11 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="215dp"
-        android:layout_marginBottom="173dp"
         android:fillViewport="true"
         android:scrollbarThumbHorizontal="@null"
-        app:layout_constraintBottom_toTopOf="@+id/search_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
@@ -32,7 +28,44 @@
                 android:layout_width="156dp"
                 android:layout_height="227dp"
                 android:backgroundTint="#003F2C2C"
-                app:srcCompat="@drawable/oel1"
+                app:srcCompat="@drawable/oel"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/cider"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
+
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/roett"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="156dp"
+                android:layout_height="227dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/vitt"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="135dp" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="156dp"
+                android:layout_height="249dp"
+                android:backgroundTint="#003F2C2C"
+                app:srcCompat="@drawable/bubbel"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="135dp" />
 
@@ -42,33 +75,6 @@
                 android:layout_height="227dp"
                 android:backgroundTint="#003F2C2C"
                 app:srcCompat="@drawable/sprit"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="135dp" />
-
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="156dp"
-                android:layout_height="227dp"
-                android:backgroundTint="#003F2C2C"
-                app:srcCompat="@drawable/vin1"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="135dp" />
-
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="156dp"
-                android:layout_height="227dp"
-                android:backgroundTint="#003F2C2C"
-                app:srcCompat="@drawable/vin2"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="135dp" />
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="156dp"
-                android:layout_height="227dp"
-                android:backgroundTint="#003F2C2C"
-                app:srcCompat="@drawable/skumpa"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="135dp" />
 

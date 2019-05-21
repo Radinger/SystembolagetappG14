@@ -25,20 +25,27 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
     private static final String TYPE = "product_group";
     private static final String NAME = "name";
 
- /*   @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-        Button btn = (Button) findViewById(R.id.Searchbutton);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Searchactivity.this, MainActivity.class);
-                startActivity(intent); finish();
-            }
-        });
     }
+
+
+    /*   @Override
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.activity_search);
+
+       Button btn = (Button) findViewById(R.id.Searchbutton);
+       btn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(Searchactivity.this, MainActivity.class);
+               startActivity(intent); finish();
+           }
+       });
+   }
 */
   /*  @Override
     public boolean onOptionsItemSelected(Button item) {

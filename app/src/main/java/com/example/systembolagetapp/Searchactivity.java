@@ -2,6 +2,7 @@ package com.example.systembolagetapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
            @Override
            public void onClick(View v) {
            showSearchDialog();
+           /*    Intent intent = new Intent(Searchactivity.this, MainActivity.class);
+               startActivity(intent); */
            }
        });
    }
@@ -65,6 +68,7 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
+
                 // Create a map to pass to the search method
                 // The map makes it easy to add more search parameters with no changes in method signatures
                 Map<String, String> arguments = new HashMap<>();
@@ -75,7 +79,7 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
                 addToMap(arguments, MIN_PRICE, valueFromView(viewInflated, R.id.min_price_input));
                 addToMap(arguments, MAX_PRICE, valueFromView(viewInflated, R.id.max_price_input));
 
-                // Given the map, s earch for products and update the listview
+                // Given the map, search for products and update the listview
                 searchProducts(arguments);
             }
         });

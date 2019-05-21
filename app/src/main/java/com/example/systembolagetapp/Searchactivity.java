@@ -25,42 +25,22 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
     private static final String TYPE = "product_group";
     private static final String NAME = "name";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-    }
 
-
-    /*   @Override
+       @Override
    protected void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_search);
 
-       Button btn = (Button) findViewById(R.id.Searchbutton);
+       Button btn = (Button) findViewById(R.id.search_button);
        btn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(Searchactivity.this, MainActivity.class);
-               startActivity(intent); finish();
+           showSearchDialog();
            }
        });
    }
-*/
-  /*  @Override
-    public boolean onOptionsItemSelected(Button item) {
-        switch (item.getItemID()) {
-            // action with ID action_refresh was selected
-            case R.id.action_search:
-                Log.d(LOG_TAG, "user pressed SEARCH");
-                showSearchDialog();
-                break;
-            default:
-                Log.d(LOG_TAG, "uh oh ;)");
-                break;
-        }
-        return true;
-    } */
+
+
     // get the entered text from a view
     private String valueFromView(View inflated, int viewId) {
         return ((EditText) inflated.findViewById(viewId)).getText().toString();

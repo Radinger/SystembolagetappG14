@@ -37,8 +37,8 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
            @Override
            public void onClick(View v) {
            showSearchDialog();
-               Intent intent = new Intent(Searchactivity.this, MainActivity.class);
-               startActivity(intent);
+        /*       Intent intent = new Intent(Searchactivity.this, MainActivity.class);
+               startActivity(intent); */
            }
        });
    }

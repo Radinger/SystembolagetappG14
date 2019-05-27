@@ -13,6 +13,10 @@ public class ProductActivity extends AppCompatActivity implements Serializable {
 
     private static final String LOG_TAG = ProductActivity.class.getSimpleName();
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,7 @@ public class ProductActivity extends AppCompatActivity implements Serializable {
         setViewText(R.id.product_volume, "Volume", String.valueOf(product.volume()));
         setViewText(R.id.product_alcohol, "Alcohol", String.valueOf(product.alcohol()));
         setViewText(R.id.product_price, "Price", String.valueOf(product.price()));
-        setViewText(R.id.product_type, "Type", String.valueOf(product.type()));
+
     }
 
 }

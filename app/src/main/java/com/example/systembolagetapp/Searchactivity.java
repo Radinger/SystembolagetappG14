@@ -9,16 +9,36 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.systembolagetapp.domain.Product;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Searchactivity extends AppCompatActivity implements Serializable {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
+    private List<Product> products;
+    private ListView listView;
+    private ArrayAdapter<Product> adapter;
     private static final String MIN_ALCO = "min_alcohol";
     private static final String MAX_ALCO = "max_alcohol";
     private static final String MIN_PRICE = "min_price";
@@ -26,30 +46,60 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
     private static final String TYPE = "product_group";
     private static final String NAME = "name";
 
+    private void createFakedProducts() {
+        products = new ArrayList<>();
+    }
 
+    private void setupListView() {
+        // look up a reference to the ListView object
+        listView = findViewById(R.id.product_list);
+
+        // create an adapter (with the faked products)
+        adapter = new ArrayAdapter<Product>(this,
+                android.R.layout.simple_list_item_1,
+                products);
+
+        // Set listView's adapter to the new adapter
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent,
+                                    final View view,
+                                    int position /*The position of the view in the adapter.*/,
+                                    long id /* The row id of the item that was clicked. */) {
+                Log.d(LOG_TAG, "item clicked, pos:" + position + " id: " + id);
+                Product p = products.get(position);
+                Intent intent = new Intent(Searchactivity.this, ProductActivity.class);
+                /* This tells the app to use ProductActivity when clicking on an object. I think? */
+                intent.putExtra("product", p);
+                startActivity(intent); /* starts the activity based on the intent. */
+            }
+        });
+    }
        @Override
-   protected void onCreate(Bundle savedInstanceState) {
+       protected void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_search);
 
-       Button btn = (Button) findViewById(R.id.search_button);
+       createFakedProducts();
+
+       setupListView();
+
+       Button btn = (Button) findViewById(R.id.searchbutton);
        btn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
            showSearchDialog();
-               Intent intent = new Intent(Searchactivity.this, MainActivity.class);
-               startActivity(intent);
+
            }
        });
    }
 
-
-    // get the entered text from a view
     private String valueFromView(View inflated, int viewId) {
         return ((EditText) inflated.findViewById(viewId)).getText().toString();
     }
 
-    // if the value is valid, add it to the map
     private void addToMap(Map<String, String> map, String key, String value) {
         if (value!=null && !value.equals("")) {
             map.put(key, value);
@@ -68,7 +118,6 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-
                 // Create a map to pass to the search method
                 // The map makes it easy to add more search parameters with no changes in method signatures
                 Map<String, String> arguments = new HashMap<>();
@@ -79,7 +128,7 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
                 addToMap(arguments, MIN_PRICE, valueFromView(viewInflated, R.id.min_price_input));
                 addToMap(arguments, MAX_PRICE, valueFromView(viewInflated, R.id.max_price_input));
 
-                // Given the map, search for products and update the listview
+                // Given the map, s earch for products and update the listview
                 searchProducts(arguments);
             }
         });
@@ -110,6 +159,52 @@ public class Searchactivity extends AppCompatActivity implements Serializable {
         // print argument
         Log.d(LOG_TAG, " arguments: " + argumentString);
 
-        // search for products later on :)
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://rameau.sandklef.com:9090/search/products/all/" + argumentString;
+        Log.d(LOG_TAG, "Searching using url: " + url);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                url,
+                null,
+                new Response.Listener<JSONArray>() {
+
+                    @Override
+                    public void onResponse(JSONArray array) {
+                        Log.d(LOG_TAG, "onResponse()");
+                        products.clear();
+                        products.addAll(jsonToProducts(array));
+                        adapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d(LOG_TAG, " cause: " + error.getCause().getMessage());
+            }
+        });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonArrayRequest);
+    }
+
+    private List<Product> jsonToProducts(JSONArray array) {
+        Log.d(LOG_TAG, "jsonToProducts()");
+        List<Product> productList = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            try {
+                JSONObject row = array.getJSONObject(i);
+                String name = row.getString("name");
+                double alcohol = row.getDouble("alcohol");
+                double price = row.getDouble("price");
+                int volume = row.getInt("volume");
+
+                Product m = new Product(name, alcohol, price, volume);
+                productList .add(m);
+                Log.d(LOG_TAG, " * " + m);
+            } catch (JSONException e) {
+                ; // is ok since this is debug
+            }
+        }
+        return productList;
     }
 }

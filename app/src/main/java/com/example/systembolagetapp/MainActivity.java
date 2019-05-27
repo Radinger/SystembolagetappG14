@@ -204,21 +204,6 @@ public class    MainActivity extends AppCompatActivity implements Serializable {
         queue.add(jsonArrayRequest);
     }
 
-        /*
-        search for products later on :)
-        Add one for now
-        Remove this when you add your Volley.newRequestQueue
-        */
-        /* Product p = new Product.Builder()
-                .alcohol(4.4)
-                .name("Budvar")
-                .nr(1234)
-                .productGroup("Öl")
-                .type("Öl")
-                .volume(330).build();
-        products.add(p);
-        adapter.notifyDataSetChanged();
-    } */
     private List<Product> jsonToProducts(JSONArray array) {
         Log.d(LOG_TAG, "jsonToProducts()");
         List<Product> productList = new ArrayList<>();
